@@ -6,7 +6,7 @@ namespace BlackBonjour\Binary;
  * Binary reader
  *
  * @author      Erick Dyck <info@erickdyck.de>
- * @since       19.10.2017
+ * @since       18.10.2017
  * @package     BlackBonjour\Binary
  * @copyright   Copyright (c) 2017 Erick Dyck
  */
