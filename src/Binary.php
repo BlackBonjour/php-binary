@@ -27,13 +27,17 @@ class Binary
      * Convert HEX string to 32bit float
      *
      * @param   string  $hex
+     * @param   boolean $convert
      * @return  float
      */
-    public static function hexTo32Float(string $hex) : float
+    public static function hexTo32Float(string $hex, bool $convert) : float
     {
-        $packed   = pack('H*', $hex);
-        $reversed = strrev($packed);
-        $unpack   = unpack('f', $reversed);
+        if ($convert && self::isLittleEndian()) {
+            $hex = self::convertEndianness($hex);
+        }
+
+        $packed = pack('H*', $hex);
+        $unpack = unpack('f', $packed);
 
         return array_shift($unpack);
     }
