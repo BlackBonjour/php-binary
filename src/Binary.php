@@ -30,7 +30,7 @@ class Binary
      * @param   boolean $convert
      * @return  float
      */
-    public static function hexTo32Float(string $hex, bool $convert) : float
+    public static function hexTo32Float(string $hex, bool $convert = true) : float
     {
         if ($convert && self::isLittleEndian()) {
             $hex = self::convertEndianness($hex);
